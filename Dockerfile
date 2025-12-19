@@ -20,12 +20,7 @@ RUN apt-get update
 
 # Install sway/wayvnc and dependencies
 RUN apt-get install -y --no-install-recommends \
-    sway wayvnc openssh-client openssl curl ca-certificates
-
-# Install Chrome
-RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_arm64.deb \
-    && apt-get install -y ./google-chrome-stable_current_arm64.deb \
-    && rm google-chrome-stable_current_arm64.deb
+    sway wayvnc openssh-client openssl curl ca-certificates chromium-browser
 
 # Clean up apt cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
