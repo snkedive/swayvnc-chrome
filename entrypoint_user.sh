@@ -64,7 +64,7 @@ command=( "$@" )
 if [ ${#command[@]} -eq 0 ]; then
     # default to starting chrome
     command=(
-        "google-chrome-stable"
+        "chromium-browser"
         "--enable-features=UseOzonePlatform"
         "--ozone-platform=wayland"
         "--disable-dev-shm-usage"
