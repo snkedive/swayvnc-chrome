@@ -1,10 +1,10 @@
 FROM debian:sid-slim
-LABEL org.opencontainers.image.source="https://github.com/stephanlensky/swayvnc-chrome"
+LABEL org.opencontainers.image.source="https://github.com/snkedive/swayvnc-chrome"
 
 ARG USER=chrome-user
 ARG PUID=1000
 ARG PGID=1000
-ARG RENDER_GROUP_GID=107
+ARG RENDER_GROUP_GID=993
 
 ENV DOCKER_USER=$USER
 ENV PUID=$PUID
@@ -23,9 +23,9 @@ RUN apt-get install -y --no-install-recommends \
     sway wayvnc openssh-client openssl curl ca-certificates
 
 # Install Chrome
-RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && apt-get install -y ./google-chrome-stable_current_amd64.deb \
-    && rm google-chrome-stable_current_amd64.deb
+RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_arm64.deb \
+    && apt-get install -y ./google-chrome-stable_current_arm64.deb \
+    && rm google-chrome-stable_current_arm64.deb
 
 # Clean up apt cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
