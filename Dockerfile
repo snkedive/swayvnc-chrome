@@ -1,4 +1,4 @@
-FROM arm64v8/debian:sid-slim
+FROM arm64v8/debian:sid
 LABEL org.opencontainers.image.source="https://github.com/snkedive/swayvnc-chrome"
 
 ARG USER=chrome-user
