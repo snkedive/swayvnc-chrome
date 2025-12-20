@@ -30,5 +30,8 @@ jobs:
 
       - name: "Build and Push Image"
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64 --tag ghcr.io/snkedive/swayvnc-chrome:latest .
-          docker push ghcr.io/snkedive/swayvnc-chrome:latest
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            --tag ghcr.io/snkedive/swayvnc-chrome:latest \
+            --push \
+            .
