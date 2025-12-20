@@ -20,7 +20,7 @@ RUN apt-get update
 
 # Install sway/wayvnc and dependencies
 RUN apt-get install -y --no-install-recommends \
-    sway wayvnc openssh-client openssl curl ca-certificates chromium-browser
+    sway wayvnc openssh-client openssl curl ca-certificates chromium
 
 # Clean up apt cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
