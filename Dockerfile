@@ -11,7 +11,7 @@ ENV PUID=$PUID
 ENV PGID=$PGID
 
 USER root
-RUN groupadd -g $PGID $DOCKER-USER
+RUN groupadd -g $PGID $DOCKER_USER
 RUN groupadd -g $RENDER_GROUP_GID docker-render
 RUN useradd -ms /bin/bash -u $PUID -g $PGID $USER
 RUN usermod -aG docker-render $USER
